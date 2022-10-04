@@ -1,6 +1,6 @@
 package ru.asherbakov.employee;
 
-import ru.asherbakov.Department;
+import ru.asherbakov.department.Department;
 
 public class Employee {
     private String firstName;
