@@ -77,4 +77,6 @@ public class Employee {
         }
         return String.format("%s:\n\tотдел: %s\n\tзарплата: %.2f", fio, department.getName(), salary);
     }
+
+
 }

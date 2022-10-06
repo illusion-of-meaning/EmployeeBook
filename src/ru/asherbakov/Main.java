@@ -1,5 +1,6 @@
 package ru.asherbakov;
 
+import ru.asherbakov.department.Department;
 import ru.asherbakov.department.DepartmentList;
 import ru.asherbakov.employee.Employee;
 import ru.asherbakov.employee.EmployeeBook;
@@ -40,10 +41,11 @@ public class Main {
 
         // --- Повышенная сложность, работа с отделом ---
         final int DEPARTMENT_NUM = 1;
+
         // Проводим индексацию зарплаты
         double indexPercent = 3.6;
         employeeBook.salaryIndex(indexPercent);
-        System.out.println(String.format("После проведения индексации на %f%%", indexPercent));
+        System.out.println(String.format("После проведения индексации на %.2f%%", indexPercent));
         employeeBook.showAllEmployees();
         System.out.println("==============================================");
 
@@ -71,7 +73,7 @@ public class Main {
 
         // Индексация зарплат по отделу
         indexPercent = 4.2;
-        System.out.println(String.format("Произведена индексация зарплат на %.2f для отдела № %s", indexPercent, DEPARTMENT_NUM));
+        System.out.println(String.format("Произведена индексация зарплат на %.2f%% для отдела № %s", indexPercent, DEPARTMENT_NUM));
         employeeBook.salaryIndex(indexPercent, DEPARTMENT_NUM);
 
         // Печатаем сотрудников отдела
@@ -99,12 +101,12 @@ public class Main {
         // --- Часть "Очень сложно" ---
         // Добавляем сотрудника
         DepartmentList departmentList = new DepartmentList();
-        Employee newEmployee = new Employee("Денис", "Александрович", "Звягинцев", departmentList.departmentIT, 52642.80);
+        Employee newEmployee = new Employee("Денис", "Александрович", "Звягинцев", departmentList.getDepartments()[0], 52642.80);
         System.out.println("-=Сотрудники до внесения изменений=-");
         employeeBook.showAllEmployeesFIO();
-        System.out.println("Попытка добавить сотрудника: " + newEmployee);
         // TODO: Если раскомментировать следующую строку, можно проверить возникновение ошибки при попытке добавить нового сотрудника в полностью заполненную базу
-//        employeeBook.addEmployee(newEmployee);
+        // System.out.println("Попытка добавить сотрудника: " + newEmployee);
+        // employeeBook.addEmployee(newEmployee);
 
         // Удаляем сотрудника по ФИО
         String removeFio1 = "Стропов Максим Владимирович";
@@ -125,6 +127,16 @@ public class Main {
         employeeBook.addEmployee(newEmployee);
         System.out.println("-=Сотрудники после внесения изменений=-");
         employeeBook.showAllEmployeesFIO();
+
+        // Изменение данных сотрудника
+        String rewriteFio = "Звягинцев Денис Александрович";
+        employeeBook.rewriteEmployee(rewriteFio, 72300);
+        employeeBook.rewriteEmployee(rewriteFio, departmentList.getDepartments()[1]);
+        System.out.println("Данные карточки сотрудника после изменения отдела и зарплаты:");
+        System.out.println(newEmployee);
+
+        // Печатаем список отделов и их сотрудников
+        employeeBook.showAllEmployeeFromDepartment();
 
     }
 
