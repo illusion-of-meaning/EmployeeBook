@@ -4,11 +4,9 @@ import java.util.Objects;
 
 public class Department {
     private String name;
-//    private int number;
 
     public Department(String name) {
         this.name = name;
-//        this.number = number;
     }
 
     public String getName() {
@@ -19,18 +17,9 @@ public class Department {
         this.name = name;
     }
 
-//    public int getNumber() {
-//        return number;
-//    }
-
-//    public void setNumber(int number) {
-//        this.number = number;
-//    }
-
     @Override
     public String toString() {
         return "Department{" +
-//                "number=" + number +
                 ", name='" + name + '\'' +
                 '}';
     }

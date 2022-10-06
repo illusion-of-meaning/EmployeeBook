@@ -1,6 +1,5 @@
 package ru.asherbakov;
 
-import ru.asherbakov.department.Department;
 import ru.asherbakov.department.DepartmentList;
 import ru.asherbakov.employee.Employee;
 import ru.asherbakov.employee.EmployeeBook;

@@ -362,39 +362,6 @@ public class EmployeeBook {
         }
     }
 
-//    public void removeEmployee(String lastName, String firstName) {
-//        boolean isRemoveFlag = false;
-//        for (int i = 0; i < employee.length - 1; i++) {
-//            if (employee[i] == null) continue;
-//            if (employee[i].getLastName().equalsIgnoreCase(lastName)
-//                    && employee[i].getFirstName().equalsIgnoreCase(firstName)) {
-//                employee[i] = null;
-//                isRemoveFlag = true;
-//                break;
-//            }
-//        }
-//        if (!isRemoveFlag) {
-//            System.err.println(String.format("Пользователь с данными фамилией/именем не найден:\n\t%s %s", lastName, firstName));
-//        }
-//    }
-//
-//    public void removeEmployee(String lastName, String firstName, String middleName) {
-//        boolean isRemoveFlag = false;
-//        for (int i = 0; i < employee.length - 1; i++) {
-//            if (employee[i] == null) continue;
-//            if (employee[i].getLastName().equalsIgnoreCase(lastName)
-//                    && employee[i].getFirstName().equalsIgnoreCase(firstName)
-//                    && employee[i].getMiddleName().equalsIgnoreCase(middleName)) {
-//                employee[i] = null;
-//                isRemoveFlag = true;
-//                break;
-//            }
-//        }
-//        if (!isRemoveFlag) {
-//            System.err.println(String.format("Пользователь с данными ФИО не найден:\n\t%s %s %s", lastName, firstName, middleName));
-//        }
-//    }
-
     /**
      * Поиск индекса сотрудника по фамилии/имени
      *
