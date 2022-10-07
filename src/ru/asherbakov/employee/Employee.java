@@ -8,14 +8,16 @@ public class Employee {
     private String lastName;
     private Department department;
     private double salary;
-    private static int id;
+    private static int currentId;
+    private int id;
 
     public Employee(String firstName, String lastName, Department department, double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
         this.salary = salary;
-        id++;
+        id = currentId + 1;
+        currentId++;
     }
 
     public Employee(String firstName, String middleName, String lastName, Department department, double salary) {
@@ -24,7 +26,8 @@ public class Employee {
         this.lastName = lastName;
         this.department = department;
         this.salary = salary;
-        id++;
+        id = currentId + 1;
+        currentId++;
     }
 
     public String getFirstName() {
